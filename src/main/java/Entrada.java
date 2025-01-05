@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class Entrada {
 
     public static void main(String[] args) {
-        agregarCoche("mercedes", "e63 amg",290000);
-        agregarCoche("mercedes", "s63 amg",490000);
-        // borrarCoche("s63 amg");
+        // agregarCoche("mercedes", "e63 amg",290000);
+        // agregarCoche("mercedes", "s63 amg",490000);
+        borrarCoche("s63 amg");
         // borrarCoche("e63 amg");
     }
 
@@ -39,7 +39,7 @@ public class Entrada {
         // Statatement -> ejecuta una query directa
         // PrepareStatement -> ejecuta una query parametrizada -> INSERT / UPDATE / DELETE
         // Resulset -> ejecuta una query de SELECT
-        String query = String.format("DELETE FROM %s WHERE %s=? "
+        String query = String.format("DELETE FROM %s WHERE %s=?"
                 , "coches",  "modelo");
         try {
             PreparedStatement preparedStatement = connection1.prepareStatement(query);
